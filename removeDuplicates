@@ -1,6 +1,7 @@
 class Solution:
     def removeDuplicates(self, nums):
         """
+        python3
         :type nums: List[int]
         :rtype: int
         """
