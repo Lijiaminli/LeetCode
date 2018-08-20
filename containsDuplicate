@@ -1,0 +1,26 @@
+class Solution:
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        ###answer1:timeout
+        new = []
+        for i in nums:
+            if i in new:
+                return True
+            else:
+                new.append(i)
+        return False
+        ###answer2:timeout
+        new = nums
+        for i in nums:
+            new.remove(i)
+            if i in new:
+                return True
+        return False
+        """
+        nums.sort()
+        for i in range(len(nums)-1):
+            if nums[i] == nums[i+1]:
+                return True
+        return False
