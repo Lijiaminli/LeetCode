@@ -1,0 +1,21 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        s = str(x)
+        l = len(s)
+        l1 = l - 1
+        if s[0] == '-':
+            count = l - 1
+            p = ['-']
+        else:
+            count = l
+            p = []
+        for i in range(count):
+            p.append(s[l1-i])
+        p = "".join(p)
+        if (int(p) > 2**31-1) or (int(p) < -2**31):
+            return 0
+        return int(p)
