@@ -1,0 +1,27 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        ls = len(s)
+        lt = len(t)
+        counts = {}
+        countt = {}
+        if ls != lt:
+            return False
+        for i in range(ls):
+            if s[i] in counts.keys():
+                counts[s[i]] = counts[s[i]] + 1
+            elif s[i] not in counts.keys():
+                counts[s[i]] = 1
+        for j in range(lt):
+            if t[j] in countt.keys():
+                countt[t[j]] = countt[t[j]] + 1
+            elif t[j] not in countt.keys():
+                countt[t[j]] = 1
+        if counts == countt:
+            return True
+        else:
+            return False
