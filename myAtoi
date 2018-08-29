@@ -10,8 +10,8 @@ class Solution(object):
         nums = []
         if len(nl) == 0:
             return 0
-        elif nl[0] == '-' or nl[0] == '+':
-            if len(nl)<2 or not (nl[1].isdigit()):
+        if nl[0] == '-' or nl[0] == '+':
+            if len(nl) < 2 or not (nl[1].isdigit()):
                 return 0
             if nl[1].isdigit():
                 if nl[0] == '-':
@@ -20,11 +20,15 @@ class Solution(object):
                     while (i < l) and (nl[i].isdigit()):
                         nums.append(nl[i])
                         i = i + 1
+                elif nl[0] == '+':
+                    i = 1
+                    while (i < l) and (nl[i].isdigit()):
+                        nums.append(nl[i])
+                        i = i + 1
         elif nl[0].isdigit():
             i = 0
             while (i<l) and (nl[i].isdigit()):
                 nums.append(nl[i])
-                print(nums)
                 i = i + 1
         elif not (nl[0].isdigit()):
             print(0)
